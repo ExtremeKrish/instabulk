@@ -178,7 +178,11 @@ flex-flow:1;
     input:checked + .slider:before {
     transform: translateX(26px);
     }
-    
+    .label-text-x , .prog {
+    color:white;
+    display:flex;
+    margin:0px 16px 8px 16px;
+    }
   </style>
 </head>
 <body>
@@ -198,7 +202,7 @@ flex-flow:1;
   </div>
   <hr>
   <ul class="background" >
-  <li style="--bg:#00000000;" >png</li>
+  <li style="--bg:rgba(0,0,0,0.7);" >dim</li>
    <li style="--bg:#243748;" ></li>
            <li style="--bg:#262f4d;" ></li>
 
@@ -232,6 +236,10 @@ flex-flow:1;
   	
   	
   	</div>
+  	  	<span class="label-text-x">Height</span>
+  	<input class="prog" type="range" id="slider" min="50" max="100" value="100">
+  	  	  	<span class="label-text-x">Corner Radius</span>
+  	  	<input class="prog" type="range" id="slider2" min="0" max="50" value="0">
   <button id="downloadButton">Download Image</button>
   <script type="text/javascript">
   // Function to set a cookie
@@ -404,6 +412,30 @@ switchElement2.addEventListener("change", function () {
   } else {
     // Hide hamburger
   }
+});
+var slider = document.getElementById('slider');
+var container = document.querySelector('#container');
+var slider2 = document.getElementById('slider2');
+slider.addEventListener('input', function() {
+  var sliderValue = this.value;
+  var containerWidth = (sliderValue / 100) * 100;
+  container.style.height = containerWidth + 'vw';
+    document.querySelector(".link").style.top = "calc(" + sliderValue + "vw - 20px)";
+});
+
+slider.addEventListener('change', function() {
+  var sliderValue = this.value;
+  container.style.height = sliderValue + 'vw';
+  document.querySelector(".link").style.top = "calc(" + sliderValue + "vw - 20px)";
+});
+slider2.addEventListener('input', function() {
+  var sliderValue = this.value;
+  container.style.borderRadius = sliderValue + '%';
+});
+
+slider2.addEventListener('change', function() {
+  var sliderValue = this.value;
+  container.style.borderRadius = sliderValue + '%';
 });
 </script>
 
