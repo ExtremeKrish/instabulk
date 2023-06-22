@@ -313,53 +313,52 @@ flex-flow:1;
   
   </script>
   <script>
-
-
- var trxt = document.querySelector(".input");
+var trxt = document.querySelector(".input");
 
 function downloadImages() {
-if(trxt.value==""){
- var stringArray = [document.querySelector(".main-tweet").innerText];
-}else{
- var stringArray = trxt.value.split("\n");
-}
-console.log(stringArray);
+  if (trxt.value == "") {
+    var stringArray = [document.querySelector(".main-tweet").innerText];
+  } else {
+    var stringArray = trxt.value.split("\n");
+  }
+  console.log(stringArray);
   var container = document.getElementById("container");
   var tweet = document.querySelector(".main-tweet");
-  
+
   var downloadIndex = 0;
-  
+
   function generateAndDownloadImage() {
     if (downloadIndex >= stringArray.length) {
       return;
     }
-  
+
     tweet.textContent = stringArray[downloadIndex];
-  
+
     html2canvas(container, {
-      scale: 5 // Increase the scale value for higher quality
-    }).then(function(canvas) {
-      var link = document.createElement('a');
-      link.download = 'tweet_img_' + (downloadIndex + 1) + '.png';
+      scale: 5, // Increase the scale value for higher quality
+      removeContainer: true, // Remove the container from the rendered image
+      backgroundColor: null // Set the background color to be transparent
+    }).then(function (canvas) {
+      var link = document.createElement("a");
+      link.download = "tweet_img_" + (downloadIndex + 1) + ".png";
       link.href = canvas.toDataURL("image/png");
       link.click();
-  
+
       downloadIndex++;
       generateAndDownloadImage(); // Recursive call for the next string in the array
     });
   }
-  
+
   generateAndDownloadImage();
 }
 
 document.getElementById("downloadButton").addEventListener("click", downloadImages);
 
-
 function changeProfileImage() {
-  const input = document.createElement('input');
-  input.type = 'file';
-  input.accept = 'image/*';
-  input.addEventListener('change', handleImageChange);
+  const input = document.createElement("input");
+  input.type = "file";
+  input.accept = "image/*";
+  input.addEventListener("change", handleImageChange);
   input.click();
 }
 
@@ -368,9 +367,9 @@ function handleImageChange(event) {
   const reader = new FileReader();
 
   reader.onload = function (event) {
-    const profileImage = document.querySelector('.profile-image');
+    const profileImage = document.querySelector(".profile-image");
     profileImage.src = event.target.result;
-      saveDataToCookies();
+    saveDataToCookies();
   };
 
   reader.readAsDataURL(file);
@@ -378,36 +377,36 @@ function handleImageChange(event) {
 
 var bgbutton = document.querySelectorAll(".background li");
 
-bgbutton.forEach( function(button){
-button.addEventListener("click", function(){
-
-// Get the computed style of an element
-var styles = getComputedStyle(button);
-// Access the value of the CSS variable
-var bgValue = styles.getPropertyValue('--bg');
- // Output: the value of --bg variable
-document.querySelector("#container").style.background = bgValue;
+bgbutton.forEach(function (button) {
+  button.addEventListener("click", function () {
+    // Get the computed style of an element
+    var styles = getComputedStyle(button);
+    // Access the value of the CSS variable
+    var bgValue = styles.getPropertyValue("--bg");
+    // Output: the value of --bg variable
+    document.querySelector("#container").style.background = bgValue;
+  });
 });
 
-});
-var switchElement = document.getElementById('mySwitch');
-var linkElement = document.querySelector('.link');
-var switchElement2 = document.getElementById('mySwitch2');
-switchElement.addEventListener('change', function() {
+var switchElement = document.getElementById("mySwitch");
+var linkElement = document.querySelector(".link");
+var switchElement2 = document.getElementById("mySwitch2");
+switchElement.addEventListener("change", function () {
   if (this.checked) {
-    linkElement.style.display = 'flex';  // Show the link
+    linkElement.style.display = "flex"; // Show the link
   } else {
-    linkElement.style.display = 'none';   // Hide the link
+    linkElement.style.display = "none"; // Hide the link
   }
 });
-switchElement2.addEventListener('change', function() {
+switchElement2.addEventListener("change", function () {
   if (this.checked) {
-
+    // Show hamburger
   } else {
-
+    // Hide hamburger
   }
 });
-  </script>
+</script>
+
 
   <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
 </body>
