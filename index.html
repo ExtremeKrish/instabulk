@@ -310,7 +310,7 @@ flex-flow:1;
   var name = getCookie("name");
   var username = getCookie("username");
   var imageInput = getCookie("imageInput");
-  var actual_linkInput = getCookie("link_input");
+ // var actual_linkInput = getCookie("link_input");
   
   // Set the values of the respective elements from the cookies
   if (name) {
@@ -323,10 +323,10 @@ flex-flow:1;
     document.querySelector(".profile-image").src = imageInput;
   }
   }
-  if (actual_linkInput) {
+ /* if (actual_linkInput) {
     extra_link.innerText = actual_linkInput;
   }
-    
+    */
   
   // Call the function to populate fields from cookies when the page is loaded
   populateFieldsFromCookies();
