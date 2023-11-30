@@ -337,7 +337,7 @@ var trxt = document.querySelector(".input");
 
 function downloadImages() {
   if (trxt.value == "") {
-    var stringArray = [document.querySelector(".main-tweet").innerHTML];
+    var stringArray = [document.querySelector(".main-tweet").innerText];
   } else {
     var stringArray = trxt.value.split("|");
   }
