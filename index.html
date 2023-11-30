@@ -337,9 +337,9 @@ var trxt = document.querySelector(".input");
 
 function downloadImages() {
   if (trxt.value == "") {
-    var stringArray = [document.querySelector(".main-tweet").innerText];
+    var stringArray = [document.querySelector(".main-tweet").innerHTML];
   } else {
-    var stringArray = trxt.value.split("\n");
+    var stringArray = trxt.value.split("|");
   }
   console.log(stringArray);
   var container = document.getElementById("container");
@@ -352,7 +352,7 @@ function downloadImages() {
       return;
     }
 
-    tweet.textContent = stringArray[downloadIndex];
+    tweet.innerText = stringArray[downloadIndex];
 
     html2canvas(container, {
       scale: 5, // Increase the scale value for higher quality
