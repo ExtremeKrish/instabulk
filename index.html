@@ -274,16 +274,18 @@ flex-flow:1;
   var nameElement = document.querySelector(".name");
   var usernameElement = document.querySelector(".username");
   var imageInputElement = document.querySelector(".input");
-  
+  var extra_link = document.querySelector(".label-text");
+ 
   // Get the values from the respective elements
   var name = nameElement.innerText;
   var username = usernameElement.innerText;
   var imageInput = imageInputElement.value;
-  
+  var extra_link_text = extra_link.innerText;
   // Save the values to cookies
   setCookie("name", name, 365); // Set the cookie with a validity of 365 days
   setCookie("username", username, 365);
   setCookie("imageInput", imageInput, 365);
+  setCookie("link_input", extra_link_text, 365);
   }
   
   // Event listener for name field
@@ -298,11 +300,17 @@ flex-flow:1;
   saveDataToCookies();
   });
   
+ // var linkElement = document.querySelector(".username");
+//  usernameElement.addEventListener("input", function() {
+  //saveDataToCookies();
+//  });
+  
   // Function to populate fields from cookies
   function populateFieldsFromCookies() {
   var name = getCookie("name");
   var username = getCookie("username");
   var imageInput = getCookie("imageInput");
+  var actual_linkInput = getCookie("link_input");
   
   // Set the values of the respective elements from the cookies
   if (name) {
@@ -315,6 +323,10 @@ flex-flow:1;
     document.querySelector(".profile-image").src = imageInput;
   }
   }
+  if (actual_linkInput) {
+    extra_link.innerText = actual_linkInput;
+  }
+    
   
   // Call the function to populate fields from cookies when the page is loaded
   populateFieldsFromCookies();
