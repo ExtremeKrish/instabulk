@@ -216,6 +216,12 @@ flex-flow:1;
   </ul>
   
   <textarea class="input"  placeholder="Or enter text manually here, usually for generating multiple posts, seprated by [enter]." ></textarea>
+  
+    	  	  	<span class="label-text-x">Font size</span>
+
+    	  	<input class="prog" type="range" id="slider3" min="10" max="20" value="16">
+  
+  
   <div class="extra-box" >
     <span class="label-text">Extra Link</span>
 <label class="switch">
@@ -226,7 +232,11 @@ flex-flow:1;
 
 
   	</div>
+
+  
   	<div class="extra-box" >
+  	    	  	  
+  
   	<span class="label-text">Show Hamburger</span>
   	<label class="switch switch2">
   	<input type="checkbox"  id="mySwitch2">
@@ -240,6 +250,10 @@ flex-flow:1;
   	<input class="prog" type="range" id="slider" min="50" max="100" value="100">
   	  	  	<span class="label-text-x">Corner Radius</span>
   	  	<input class="prog" type="range" id="slider2" min="0" max="50" value="0">
+
+  
+  
+  
   <button id="downloadButton">Download Image</button>
   <script type="text/javascript">
   // Function to set a cookie
@@ -428,6 +442,8 @@ switchElement2.addEventListener("change", function () {
 var slider = document.getElementById('slider');
 var container = document.querySelector('#container');
 var slider2 = document.getElementById('slider2');
+var slider3 = document.getElementById('slider3');
+
 slider.addEventListener('input', function() {
   var sliderValue = this.value;
   var containerWidth = (sliderValue / 100) * 100;
@@ -448,6 +464,16 @@ slider2.addEventListener('input', function() {
 slider2.addEventListener('change', function() {
   var sliderValue = this.value;
   container.style.borderRadius = sliderValue + 'px';
+});
+slider3.addEventListener('input', function() {
+  var sliderValue = this.value;
+document.querySelector('.main-tweet').style.fontSize = sliderValue + "px";
+  
+});
+
+slider3.addEventListener('change', function() {
+  var sliderValue = this.value;
+document.querySelector('.main-tweet').style.fontSize = sliderValue + "px";
 });
 </script>
 
