@@ -6,34 +6,34 @@
         <meta name="keywords" content="Instagram posts, bulk post generator, social media tools, content creation, Instagram marketing, time-saving tools, customization, engagement">
         <title>INSTABULK - Generate Instagram Posts in Bulk, Effortlessly</title>
         <link href="https://fonts.cdnfonts.com/css/geomanist" rel="stylesheet">
-        <title>Noping</title>
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <style>
-        *{
-          box-sizing: border-box;
-        }
+            * {
+                box-sizing: border-box;
+            }
+
             html {
                 background: #212121;
-                height:100%;
-                width:100%;
+                height: 100%;
+                width: 100%;
             }
 
             body {
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                 height:100%;
-                width:100%;
-
+                height: 100%;
+                width: 100%;
                 display: flex;
                 flex-direction: row;
                 font-family: Poppins;
             }
-main {
-                 height:100%;
+
+            main {
+                height: 100%;
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
@@ -41,8 +41,9 @@ main {
                 display: flex;
                 flex-direction: column;
                 font-family: Poppins;
-                overflow:hidden;
+                overflow: hidden;
             }
+
             #container {
                 width: 100%;
                 outline: 0;
@@ -53,8 +54,9 @@ main {
                 align-items: center;
                 top: 0;
                 left: 0;
-               aspect-ratio:1;
+                aspect-ratio: 1;
             }
+
             #container2 {
                 margin: 0;
                 padding: 0;
@@ -63,47 +65,48 @@ main {
                 display: flex;
                 flex-direction: column;
                 font-family: Poppins;
-                overflow:hidden scroll;
-                height:50%;
-                width:100%;
-                
+                overflow: hidden scroll;
+                height: 50%;
+                width: 100%;
             }
-            @media only screen and (min-width: 768px) {
-              body{
-               align-items: center;
-               justify-content: center;
-              }
-                main{
-                  flex-direction: row;
-                  height:60%;
-                width:70%;
-                border: 2px solid white;
-                }
-                #container{
 
-                  aspect-ratio:1;
-               width:365px;
-                  height:100%;
+            @media only screen and (min-width: 768px) {
+                body {
+                    align-items: center;
+                    justify-content: center;
                 }
-                #container2{
-                  height: 100%;
-                 
-                  
+
+                main {
+                    flex-direction: row;
+                    height: 60%;
+                    width: 70%;
+                    border: 2px solid white;
                 }
+
+                #container {
+                    aspect-ratio: 1;
+                    width: 365px;
+                    height: 100%;
+                }
+
+                #container2 {
+                    height: 100%;
+                }
+
                 .link {
-                position: absolute;
-                color: #2196F3;
-                margin-bottom: 0;
-                margin-top: auto;
-                display: flex;
-                left: calc(-50% - 12px);
-                width: 100vw;
-                font-size: 12px;
-                justify-content: center;
-                font-family: 'Poppins', sans-serif;
+                    position: absolute;
+                    color: #2196F3;
+                    margin-bottom: 0;
+                    margin-top: auto;
+                    display: flex;
+                    left: calc(-50% - 12px);
+                    width: 100vw;
+                    font-size: 12px;
+                    justify-content: center;
+                    font-family: 'Poppins', sans-serif;
+                }
             }
-                
-            }
+
             #tweet {
                 display: flex;
                 flex-direction: column;
@@ -116,11 +119,10 @@ main {
 
             .top {
                 display: flex;
-                
             }
 
             .profile-image {
-               aspect-ratio:1/1;
+                aspect-ratio: 1/1;
                 width: 15%;
                 border-radius: 6vw;
                 background: white;
@@ -267,66 +269,58 @@ main {
         </style>
     </head>
     <body>
-      <main>
-        <!--Tab to edit-->
-      
-        <div id="container">
-            <div id="tweet">
-                <div class="top">
-                    <img class="profile-image" onclick="changeProfileImage()" src="https://raw.githubusercontent.com/noping07/noping07.github.io/main/app.jpg">
-                    <div class="profile-info">
-                        <div class="name" style="font-size:14px;font-weight:bold;" contenteditable="">No Ping</div>
-                        <div class="username" style="color:#2196F3; font-size:14px;margin-top:2px;" contenteditable="">@noping07</div>
+        <main>
+            <!--Tab to edit-->
+            <div id="container">
+                <div id="tweet">
+                    <div class="top">
+                        <img class="profile-image" onclick="changeProfileImage()" src="https://raw.githubusercontent.com/noping07/noping07.github.io/main/app.jpg">
+                        <div class="profile-info">
+                            <div class="name" style="font-size:14px;font-weight:bold;" contenteditable="">No Ping</div>
+                            <div class="username" style="color:#2196F3; font-size:14px;margin-top:2px;" contenteditable="">@noping07</div>
+                        </div>
+                    </div>
+                    <div class="main-tweet" contenteditable="">Tap to Edit Text <br>
                     </div>
                 </div>
-                <div class="main-tweet" contenteditable="">Tap to Edit Text <br>
-                </div>
+                <p class="link" contenteditable="">
+                    <svg fill="#2196f3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-telegram" width="28" height="16" viewBox="0 0 24 24">
+                        <path d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z" />
+                    </svg>t.me/noping07
+                </p>
             </div>
-            <p class="link" contenteditable="">
-                <svg fill="#2196f3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="mdi-telegram" width="28" height="16" viewBox="0 0 24 24">
-                    <path d="M9.78,18.65L10.06,14.42L17.74,7.5C18.08,7.19 17.67,7.04 17.22,7.31L7.74,13.3L3.64,12C2.76,11.75 2.75,11.14 3.84,10.7L19.81,4.54C20.54,4.21 21.24,4.72 20.96,5.84L18.24,18.65C18.05,19.56 17.5,19.78 16.74,19.36L12.6,16.3L10.61,18.23C10.38,18.46 10.19,18.65 9.78,18.65Z" />
-                </svg>t.me/noping07
-            </p>
-        </div>
-        <hr>
-        <div id="container2">
-        <ul class="background">
-            <li style="--bg:rgba(0,0,0,0.7);">dim</li>
-            <li style="--bg:#243748;"></li>
-            <li style="--bg:#262f4d;"></li>
-            <li style="--bg:#332966;"></li>
-            <li style="--bg:#fe6700;"></li>
-            <li style="--bg:#000000;"></li>
-            <li style="--bg:#c6c21f;"></li>
-            <li style="--bg:#651e1e;"></li>
-            <li style="--bg:#2196f3;"></li>
-            <li style="--bg:#2196f3;"></li>
-        </ul>
-        <textarea class="input" placeholder="Or enter text manually here, usually for generating multiple posts, seprated by [enter]."></textarea>
-        <span class="label-text-x">Font size</span>
-        <input class="prog" type="range" id="slider3" min="10" max="20" value="16">
-        <div class="extra-box">
-            <span class="label-text">Extra Link</span>
-            <label class="switch">
-                <input type="checkbox" checked="checked" id="mySwitch">
-                <span class="slider"></span>
-            </label>
-        </div>
-        <!--div class="extra-box">
-            <span class="label-text">Show Hamburger</span>
-            <label class="switch switch2">
-                <input type="checkbox" id="mySwitch2">
-                <span class="slider"></span>
-            </label>
-        </div-->
-        <span class="label-text-x">Height</span>
-        <input class="prog" type="range" id="slider" min="50" max="100" value="100">
-        <span class="label-text-x">Corner Radius</span>
-        <input class="prog" type="range" id="slider2" min="0" max="50" value="0">
-        <button id="downloadButton">Download Image</button>
-        </div>
-        
-          <!--Tab to edit-->
+            <hr>
+            <div id="container2">
+                <ul class="background">
+                    <li style="--bg:rgba(0,0,0,0.7);">dim</li>
+                    <li style="--bg:#243748;"></li>
+                    <li style="--bg:#262f4d;"></li>
+                    <li style="--bg:#332966;"></li>
+                    <li style="--bg:#fe6700;"></li>
+                    <li style="--bg:#000000;"></li>
+                    <li style="--bg:#c6c21f;"></li>
+                    <li style="--bg:#651e1e;"></li>
+                    <li style="--bg:#2196f3;"></li>
+                    <li style="--bg:#2196f3;"></li>
+                </ul>
+                <textarea class="input" placeholder="Or enter text manually here, usually for generating multiple posts, seprated by [enter]."></textarea>
+                <span class="label-text-x">Font size</span>
+                <input class="prog" type="range" id="slider3" min="10" max="20" value="16">
+                <div class="extra-box">
+                    <span class="label-text">Extra Link</span>
+                    <label class="switch">
+                        <input type="checkbox" checked="checked" id="mySwitch">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+                <!--div class="extra-box"><span class="label-text">Show Hamburger</span><label class="switch switch2"><input type="checkbox" id="mySwitch2"><span class="slider"></span></label></div-->
+                <span class="label-text-x">Height</span>
+                <input class="prog" type="range" id="slider" min="50" max="100" value="100">
+                <span class="label-text-x">Corner Radius</span>
+                <input class="prog" type="range" id="slider2" min="0" max="50" value="0">
+                <button id="downloadButton">Download Image</button>
+            </div>
+            <!--Tab to edit-->
         </main>
         <script type="text/javascript">
             // Function to set a cookie
@@ -522,17 +516,15 @@ main {
                 var sliderValue = this.value;
                 document.querySelector('.main-tweet').style.fontSize = sliderValue + "px";
             });
-            // Assuming you have an element with the ID 'myElement'
-var myElement = document.getElementById('container');
-
-// Check if the browser width is greater than 768 pixels
-if (window.innerWidth > 768) {
-  // Get the current height of the element
-  var height = myElement.clientHeight;
-  // Set the width equal to the height
-  myElement.style.width = height + 'px';
-}
-
+            // Assuming you haan element with the ID 'myElement'
+            // Check if the browser width is greater than 768 pixels
+            if (window.innerWidth > 768) {
+                // Get the current height of the element
+                //var height = document.querySelector("main").offsetHeight;
+                // Set the width equal to the height
+                elem = document.getElementById('container');
+                elem.style.minWidth = elem.offsetHeight + 'px';
+            }
         </script>
         <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     </body>
