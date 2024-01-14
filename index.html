@@ -528,8 +528,7 @@ var myElement = document.getElementById('container');
 // Check if the browser width is greater than 768 pixels
 if (window.innerWidth > 768) {
   // Get the current height of the element
-  var height = myElement.parentElement.clientHeight;
-
+  var height = myElement.clientHeight;
   // Set the width equal to the height
   myElement.style.width = height + 'px';
 }
