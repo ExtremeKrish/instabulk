@@ -380,7 +380,6 @@
                 // Save the values to cookies
                 setCookie("name", name, 365); // Set the cookie with a validity of 365 days
                 setCookie("username", username, 365);
-                setCookie("imageInput", imageInput, 365);
                 setCookie("link_input", extra_link_text, 365);
             }
             // Event listener for name field
@@ -401,17 +400,17 @@
             function populateFieldsFromCookies() {
                 var name = getCookie("name");
                 var username = getCookie("username");
-                var imageInput = getCookie("imageInput");
-                // var actual_linkInput = getCookie("link_input");
+
+            if (localStorage.getItem('storedImage')) {
+                const displayImage =  document.querySelector(".profile-image");
+                displayImage.src = localStorage.getItem('storedImage');
+            }           // var actual_linkInput = getCookie("link_input");
                 // Set the values of the respective elements from the cookies
                 if (name) {
                     nameElement.innerText = name;
                 }
                 if (username) {
                     usernameElement.innerText = username;
-                }
-                if (imageInput) {
-                    document.querySelector(".profile-image").src = imageInput;
                 }
             }
             /* if (actual_linkInput) {
@@ -439,6 +438,10 @@ var stringArray = trxt.value.split("|").map(function(item) {
                 var downloadIndex = 0;
 
                 function generateAndDownloadImage() {
+                              if (localStorage.getItem('storedImage')) {
+                const displayImage =  document.querySelector(".profile-image");
+                displayImage.src = localStorage.getItem('storedImage');
+            }       
                     if (downloadIndex >= stringArray.length) {
                         return;
                     }
@@ -449,7 +452,7 @@ var stringArray = trxt.value.split("|").map(function(item) {
                         backgroundColor: null // Set the background color to be transparent
                     }).then(function(canvas) {
                         var link = document.createElement("a");
-                        link.download = "tweet_img_" + (downloadIndex + 1) + ".png";
+                        link.download = "IGBULK-" + (downloadIndex + 1) + ".png";
                         link.href = canvas.toDataURL("image/png");
                         link.click();
                         downloadIndex++;
@@ -474,6 +477,8 @@ var stringArray = trxt.value.split("|").map(function(item) {
                 reader.onload = function(event) {
                     const profileImage = document.querySelector(".profile-image");
                     profileImage.src = event.target.result;
+                    localStorage.setItem('storedImage', event.target.result);
+
                     saveDataToCookies();
                 };
                 reader.readAsDataURL(file);
@@ -553,7 +558,27 @@ var stringArray = trxt.value.split("|").map(function(item) {
             });
             // Assuming you haan element with the ID 'myElement'
             // Check if the browser width is greater than 768 pixels
-            
+            function storeImage() {
+            const input = document.getElementById('imageInput');
+            const file = input.files[0];
+
+            if (file) {
+                const reader = new FileReader();
+
+                reader.onload = function (e) {
+                    const imageData = e.target.result;
+
+                    // Store image data in localStorage
+                    localStorage.setItem('storedImage', imageData);
+
+                    console.log('Image stored successfully.');
+                };
+
+                reader.readAsDataURL(file);
+            } else {
+                console.error('No file selected.');
+            }
+        }
         </script>
         <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     </body>
