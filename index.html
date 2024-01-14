@@ -82,15 +82,15 @@ main {
                 #container{
 
                   aspect-ratio:1;
-
+               width:365px;
                   height:100%;
                 }
                 #container2{
                   height: 100%;
-                  width: 50%;
+                 
                   
                 }
-                            .link {
+                .link {
                 position: absolute;
                 color: #2196F3;
                 margin-bottom: 0;
@@ -107,7 +107,7 @@ main {
             #tweet {
                 display: flex;
                 flex-direction: column;
-                max-width: 80vw;
+                max-width: 80%;
                 color: white;
                 font-family: 'Poppins', sans-serif;
                 margin-top: -8px;
@@ -522,6 +522,18 @@ main {
                 var sliderValue = this.value;
                 document.querySelector('.main-tweet').style.fontSize = sliderValue + "px";
             });
+            // Assuming you have an element with the ID 'myElement'
+var myElement = document.getElementById('container');
+
+// Check if the browser width is greater than 768 pixels
+if (window.innerWidth > 768) {
+  // Get the current height of the element
+  var height = myElement.parentElement.clientHeight;
+
+  // Set the width equal to the height
+  myElement.style.width = height + 'px';
+}
+
         </script>
         <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     </body>
