@@ -9,7 +9,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" maximum-scale="1.0" user-scalable="no" />
         <style>
             * {
                 box-sizing: border-box;
@@ -19,10 +19,11 @@
                 background: #212121;
                 height: 100%;
                 width: 100%;
-                margin:0;
-                padding:0;
+                margin: 0;
+                padding: 0;
+                overflow-x: hidden;
             }
-            
+
             body {
                 margin: 0;
                 padding: 0;
@@ -40,7 +41,6 @@
                 margin: 0;
                 padding: 0;
                 box-sizing: border-box;
-                background: #212121;
                 display: flex;
                 flex-direction: column;
                 font-family: Poppins;
@@ -50,7 +50,7 @@
             #container {
                 width: 100vw;
                 outline: 0;
-                min-height:100vw;
+                min-height: 100vw;
                 border: 0;
                 background: #171A29;
                 overflow: hidden;
@@ -58,7 +58,6 @@
                 align-items: center;
                 top: 0;
                 left: 0;
-                
             }
 
             #container2 {
@@ -73,7 +72,8 @@
                 height: 50%;
                 width: 100%;
             }
-    .link {
+
+            .link {
                 position: absolute;
                 color: #2196F3;
                 margin-bottom: 0;
@@ -85,6 +85,7 @@
                 justify-content: center;
                 font-family: 'Poppins', sans-serif;
             }
+
             @media only screen and (min-width: 768px) {
                 body {
                     align-items: center;
@@ -97,38 +98,35 @@
                     height: 384px;
                     width: 768px;
                     border: 2px solid white;
+                    background-size: 50px;
+                    background-repeat: repeat;
+                    background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Chess_Board.svg/1024px-Chess_Board.svg.png);
                 }
 
                 #container {
                     aspect-ratio: 1;
                     min-width: 384px;
                     height: 384px;
-                    min-height:384px;
-                    width:384px;
+                    min-height: 384px;
+                    width: 384px;
                 }
 
                 #container2 {
                     height: 384px;
-                    max-width:384px;
+                    max-width: 384px;
                 }
 
                 .link {
                     position: relative;
                     color: #2196F3;
-                    
-                   
-                    
-                  top:-8px;
-                    
-                    
+                    top: -8px;
                     display: flex;
-                   left:-176px;
-                    min-width:384px;
+                    left: -176px;
+                    min-width: 384px;
                     font-size: 12px;
                     justify-content: center;
                     font-family: 'Poppins', sans-serif;
                 }
-
             }
 
             #tweet {
@@ -148,7 +146,7 @@
             .profile-image {
                 aspect-ratio: 1/1;
                 width: 44px;
-                height:44px;
+                height: 44px;
                 border-radius: 6vw;
                 background: white;
                 margin-right: 15px;
@@ -175,27 +173,26 @@
             }
 
             .profile-info div {
-              font-size: 14px;
+                font-size: 14px;
             }
 
             hr {
                 margin: 0;
                 padding: 0;
-                border:1px solid white;
-                outline:none;
+                border: 1px solid white;
+                outline: none;
             }
-
-        
 
             .background {
                 display: flex;
                 padding: 0;
                 overflow: scroll hidden;
                 margin: 16px 8px 8px 8px;
+                min-height: 96px;
             }
 
             .background li {
-                height: 80px;
+                min-height: 80px;
                 min-width: 60px;
                 background: var(--bg);
                 list-style: none;
@@ -284,6 +281,18 @@
                 display: flex;
                 margin: 0px 16px 8px 16px;
             }
+
+            footer {
+                padding: 0 18px;
+                color: white;
+                text-align: center;
+            }
+
+            footer a {
+                color: white;
+                display: inline-block;
+                margin: 0 8px;
+            }
         </style>
     </head>
     <body>
@@ -330,26 +339,26 @@
                         <input type="checkbox" checked="checked" id="mySwitch">
                         <span class="slider"></span>
                     </label>
-                    
+                    <!--Tab to edit-->
                 </div>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9175976224626821"
-     crossorigin="anonymous"></script>
-<!-- Tooling -->
-<ins class="adsbygoogle"
-     style="display:block"
-     data-ad-client="ca-pub-9175976224626821"
-     data-ad-slot="3183598316"
-     data-ad-format="auto"
-     data-full-width-responsive="true"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+                <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9175976224626821" crossorigin="anonymous"></script>
+                <!-- Tooling -->
+                <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-9175976224626821" data-ad-slot="3183598316" data-ad-format="auto" data-full-width-responsive="true"></ins>
+                <script>
+                    (adsbygoogle = window.adsbygoogle || []).push({});
+                </script>
                 <!--div class="extra-box"><span class="label-text">Show Hamburger</span><label class="switch switch2"><input type="checkbox" id="mySwitch2"><span class="slider"></span></label></div-->
                 <span class="label-text-x">Height</span>
                 <input class="prog" type="range" id="slider" min="50" max="384" value="384">
                 <span class="label-text-x">Corner Radius</span>
-                <input class="prog" type="range" id="slider2" min="0" max="50" value="0">
+                <input class="prog" type="range" id="slider2" min="0" max="150" value="0">
                 <button id="downloadButton">Download Image</button>
+                <footer>
+                    <p> Made with ❤️ by <a href="https://extremekrish.github.io"> @Extreme_Krish </a>
+                    </p>
+                    <a href="privacy_policy.html">Privacy Policy</a>
+                    <a href="mailto:krishvishwakarma83@gmail.com">Contact</a>
+                </footer>
             </div>
             <!--Tab to edit-->
         </main>
@@ -413,11 +422,10 @@
             function populateFieldsFromCookies() {
                 var name = getCookie("name");
                 var username = getCookie("username");
-
-            if (localStorage.getItem('storedImage')) {
-                const displayImage =  document.querySelector(".profile-image");
-                displayImage.src = localStorage.getItem('storedImage');
-            }           // var actual_linkInput = getCookie("link_input");
+                if (localStorage.getItem('storedImage')) {
+                    const displayImage = document.querySelector(".profile-image");
+                    displayImage.src = localStorage.getItem('storedImage');
+                } // var actual_linkInput = getCookie("link_input");
                 // Set the values of the respective elements from the cookies
                 if (name) {
                     nameElement.innerText = name;
@@ -440,10 +448,10 @@
                 if (trxt.value == "") {
                     var stringArray = [document.querySelector(".main-tweet").innerText];
                 } else {
-                //  var stringArray = trxt.value.split("|");
-var stringArray = trxt.value.split("|").map(function(item) {
-    return item.trim();
-});
+                    //  var stringArray = trxt.value.split("|");
+                    var stringArray = trxt.value.split("|").map(function(item) {
+                        return item.trim();
+                    });
                 }
                 console.log(stringArray);
                 var container = document.getElementById("container");
@@ -451,10 +459,10 @@ var stringArray = trxt.value.split("|").map(function(item) {
                 var downloadIndex = 0;
 
                 function generateAndDownloadImage() {
-                              if (localStorage.getItem('storedImage')) {
-                const displayImage =  document.querySelector(".profile-image");
-                displayImage.src = localStorage.getItem('storedImage');
-            }       
+                    if (localStorage.getItem('storedImage')) {
+                        const displayImage = document.querySelector(".profile-image");
+                        displayImage.src = localStorage.getItem('storedImage');
+                    }
                     if (downloadIndex >= stringArray.length) {
                         return;
                     }
@@ -491,7 +499,6 @@ var stringArray = trxt.value.split("|").map(function(item) {
                     const profileImage = document.querySelector(".profile-image");
                     profileImage.src = event.target.result;
                     localStorage.setItem('storedImage', event.target.result);
-
                     saveDataToCookies();
                 };
                 reader.readAsDataURL(file);
@@ -542,16 +549,14 @@ var stringArray = trxt.value.split("|").map(function(item) {
                 container.style.height = containerWidth + 'px';
                 container.style.maxHeight = containerWidth + 'px';
                 translateLink(sliderValue);
-
             });
-            function translateLink(sliderValue){
-               if(window.innerWidth > 768){
-                 document.querySelector(".link").style.top = "calc(" - sliderValue + "px - 8px)";
 
-            }else{
-              document.querySelector(".link").style.top = "calc(" + sliderValue + "px - 20px)";
-
-            }
+            function translateLink(sliderValue) {
+                if (window.innerWidth > 768) {
+                    document.querySelector(".link").style.top = "calc(" - sliderValue + "px - 8px)";
+                } else {
+                    document.querySelector(".link").style.top = "calc(" + sliderValue + "px - 20px)";
+                }
             }
             slider2.addEventListener('input', function() {
                 var sliderValue = this.value;
@@ -572,26 +577,21 @@ var stringArray = trxt.value.split("|").map(function(item) {
             // Assuming you haan element with the ID 'myElement'
             // Check if the browser width is greater than 768 pixels
             function storeImage() {
-            const input = document.getElementById('imageInput');
-            const file = input.files[0];
-
-            if (file) {
-                const reader = new FileReader();
-
-                reader.onload = function (e) {
-                    const imageData = e.target.result;
-
-                    // Store image data in localStorage
-                    localStorage.setItem('storedImage', imageData);
-
-                    console.log('Image stored successfully.');
-                };
-
-                reader.readAsDataURL(file);
-            } else {
-                console.error('No file selected.');
+                const input = document.getElementById('imageInput');
+                const file = input.files[0];
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        const imageData = e.target.result;
+                        // Store image data in localStorage
+                        localStorage.setItem('storedImage', imageData);
+                        console.log('Image stored successfully.');
+                    };
+                    reader.readAsDataURL(file);
+                } else {
+                    console.error('No file selected.');
+                }
             }
-        }
         </script>
         <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     </body>
