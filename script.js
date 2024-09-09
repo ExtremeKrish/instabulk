@@ -154,6 +154,8 @@
          document.querySelector(".color-picker").style.background = event.detail.color;
          
             });
+            
+
             var switchElement = document.getElementById("mySwitch");
             var linkElement = document.querySelector(".link");
             var switchElement2 = document.getElementById("mySwitch2");
