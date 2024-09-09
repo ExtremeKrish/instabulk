@@ -137,7 +137,7 @@
                 };
                 reader.readAsDataURL(file);
             }
-            var bgbutton = document.querySelectorAll(".background li");
+           var bgbutton = document.querySelectorAll(".background li");
             bgbutton.forEach(function(button) {
                 button.addEventListener("click", function() {
                     // Get the computed style of an element
@@ -147,6 +147,12 @@
                     // Output: the value of --bg variable
                     document.querySelector("#container").style.background = bgValue;
                 });
+            });
+            document.addEventListener('coloris:pick', event => {
+                
+                document.querySelector("#container").style.background = event.detail.color;
+         document.querySelector(".color-picker").style.background = event.detail.color;
+         
             });
             var switchElement = document.getElementById("mySwitch");
             var linkElement = document.querySelector(".link");
