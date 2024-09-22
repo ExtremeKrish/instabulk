@@ -75,7 +75,7 @@
                */
             // Call the function to populate fields from cookies when the page is loaded
             populateFieldsFromCookies();
-        
+
             var trxt = document.querySelector(".input");
 
             function downloadImages() {
@@ -83,9 +83,14 @@
                     var stringArray = [document.querySelector(".main-tweet").innerText];
                 } else {
                     //  var stringArray = trxt.value.split("|");
-                    var stringArray = trxt.value.split("\n").map(function(item) {
-                        return item.trim();
-                    });
+                    if (trxt.value.startsWith('[')) {
+                        var stringArray = JSON.parse(trxt.value);
+                    } else {
+                        var stringArray = trxt.value.split("|").map(function(item) {
+                            return item.trim();
+                        });
+                    }
+
                 }
                 console.log(stringArray);
                 var container = document.getElementById("container");
@@ -137,7 +142,7 @@
                 };
                 reader.readAsDataURL(file);
             }
-           var bgbutton = document.querySelectorAll(".background li");
+            var bgbutton = document.querySelectorAll(".background li");
             bgbutton.forEach(function(button) {
                 button.addEventListener("click", function() {
                     // Get the computed style of an element
@@ -149,13 +154,21 @@
                 });
             });
             document.addEventListener('coloris:pick', event => {
-                
-                document.querySelector("#container").style.background = event.detail.color;
-         document.querySelector(".color-picker").style.background = event.detail.color;
-         
-            });
-            
 
+                document.querySelector("#container").style.background = event.detail.color;
+                document.querySelector(".color-picker").style.background = event.detail.color;
+
+            });
+            const fontSelect = document.getElementById("font");
+            const tweet = document.querySelector(".main-tweet");
+            // Add an event listener to detect changes in the select element
+            fontSelect.addEventListener("change", function() {
+                // Get the selected font value
+                const selectedFont = fontSelect.value;
+
+                // Apply the selected font to the tweet element
+                tweet.style.fontFamily = selectedFont;
+            });
             var switchElement = document.getElementById("mySwitch");
             var linkElement = document.querySelector(".link");
             var switchElement2 = document.getElementById("mySwitch2");
