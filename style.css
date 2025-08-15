@@ -254,9 +254,9 @@ main {
 
 .main-tweet {
     font-size: 16px;
-    margin-top: 16px;
+    margin-top: 14px;
     font-family: 'CustomFont';
-    line-height: 20px;
+    line-height: 22px;
     width: 100%;
 }
 
@@ -430,9 +430,11 @@ input:checked+.slider:before {
 }
 
 footer {
-    padding: 0 18px;
+    padding: 0 18px 56px 18px;
     color: white;
     text-align: center;
+    font-size: 12px;
+    height:100px;
 }
 
 footer a {

@@ -112,7 +112,7 @@
                         backgroundColor: null // Set the background color to be transparent
                     }).then(function(canvas) {
                         var link = document.createElement("a");
-                        link.download = "imggen_" + (downloadIndex + 1) + ".png";
+                        link.download = "instabulkk_" + (downloadIndex + 1) + ".png";
                         link.href = canvas.toDataURL("image/png");
                         link.click();
                         downloadIndex++;
@@ -190,6 +190,8 @@
             var container = document.querySelector('#container');
             var slider2 = document.getElementById('slider2');
             var slider3 = document.getElementById('slider3');
+            var slider5 = document.getElementById('slider5');
+
             slider.addEventListener('input', function() {
                 var sliderValue = this.value;
                 var containerWidth = (sliderValue / 100) * 100;
@@ -221,6 +223,9 @@
                 var sliderValue = this.value;
                 container.style.borderRadius = sliderValue + 'px';
             });
+            
+            
+            
             slider3.addEventListener('input', function() {
                 var sliderValue = this.value;
                 document.querySelector('.main-tweet').style.fontSize = sliderValue + "px";
@@ -228,6 +233,16 @@
             slider3.addEventListener('change', function() {
                 var sliderValue = this.value;
                 document.querySelector('.main-tweet').style.fontSize = sliderValue + "px";
+            });
+
+
+            slider5.addEventListener('input', function() {
+                var sliderValue = this.value;
+                document.querySelector('.main-tweet').style.lineHeight = sliderValue + "px";
+            });
+            slider5.addEventListener('change', function() {
+                var sliderValue = this.value;
+                document.querySelector('.main-tweet').style.lineHeight = sliderValue + "px";
             });
             // Assuming you haan element with the ID 'myElement'
             // Check if the browser width is greater than 768 pixels
